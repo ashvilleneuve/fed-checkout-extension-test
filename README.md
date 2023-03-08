@@ -1,3 +1,13 @@
+# Quick setup
+
+1. Clone this repo 
+2. Go sign up for ngrok and get a new auth token: https://dashboard.ngrok.com/auth/your-authtoken
+3. In terminal, cd into the app directory: `cd validation-test`
+4. Still in terminal, make sure you have all the packages you need: `npm install`
+5. And still in terminal, start the development server for the app: `npm run dev`
+6. You should see some prompts to login to your partner account and add your ngrok token. Follow those.
+7. At the end of the build process, you should be able to hit `p` and an ngrok page will open up. Click the button to be directed to a preview of the app in our test store.
+
 # Shopify App Template - Node
 
 This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) using Node and React. It contains the basics for building a Shopify app.

@@ -8,6 +8,10 @@
 6. You should see some prompts to login to your partner account and add your ngrok token. Follow those.
 7. At the end of the build process, you should be able to hit `p` and an ngrok page will open up. Click the button to be directed to a preview of the app in our test store.
 
+You can make changes to the relevant jsx files while `npm run dev` is still running in your terminal window and they should appear in the app in the admin after a couple of seconds. [This is the tutorial](https://shopify.dev/docs/apps/checkout/validation/fields) I followed to create this app. Feel free to mess it up as much as you like on your local. That won't affect anything outside your own copy.
+
+Note that I am including all the env variables here despite that being a super bad idea because this repo is locked and will stay that way. Don't do that irl!
+
 # Shopify App Template - Node
 
 This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) using Node and React. It contains the basics for building a Shopify app.

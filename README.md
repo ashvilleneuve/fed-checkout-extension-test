@@ -11,7 +11,9 @@
 9. Log into the store (testing-checkout-extensions.myshopify.com) and open admin settings > Checkout and accounts > Go to Checkout Editor
 10. Click "Add app" at the bottom of the menu on the left. Choose "fed testing extensions" -- that's us!
 
-You can make changes to the relevant jsx files while `npm run dev` is still running in your terminal window and they should appear in the app in the admin after a couple of seconds. [This is the tutorial](https://shopify.dev/docs/apps/checkout/validation/fields) I followed to create this app. Feel free to mess it up as much as you like on your local. That won't affect anything outside your own copy.
+You can make changes to the relevant jsx files. [This is the tutorial](https://shopify.dev/docs/apps/checkout/validation/fields) I followed to create this app. Feel free to mess it up as much as you like on your local. That won't affect anything outside your own copy.
+
+You'll need to quit the dev server in terminal and run `npm run deploy` when you've saved the changes you make. After the deploy completes, go [to the extension's page in the partner dashboard](https://partners.shopify.com/593487/apps/32472760321/extensions/checkout_ui_extension/21901836289) and create a new version for your changes. Choose "minor" for the version type and then publish the new version. That should allow you to refresh the checkout editor and see your changes.
 
 # Shopify App Template - Node
 

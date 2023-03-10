@@ -16,14 +16,14 @@ render("Checkout::Contact::RenderAfter", () => <App />);
 function App() {
   // Set the target age that a buyer must be to complete an order as well as the error message
   // Now using the merchant-defined settings to retrieve the values
-  const {age_threshold, age_error, age_label, age_missing_error} = useSettings();
-  
-  // Set defaults if a merchant didn't configure the settings in the checkout editor
+  const {age_threshold, age_error, age_label, age_title, age_missing_error} = useSettings();
 
+  // Set defaults if a merchant didn't configure the settings in the checkout editor
   const ageTarget = age_threshold ?? 18;
-  const ageError = age_error ?? "You're not legally old enough to buy some of the items in your cart."
-  const ageLabel = age_label ?? "Your age"
-  const ageMissingError = age_missing_error ?? "Enter your age"
+  const ageError = age_error ?? "You're not legally old enough to buy some of the items in your cart.";
+  const ageLabel = age_label ?? "Your age";
+  const ageTitle = age_title ?? "Age Verification";
+  const ageMissingError = age_missing_error ?? "Enter your age";
 
   // Set up the app state
   const [age, setAge] = useState("");
@@ -34,8 +34,8 @@ function App() {
   // To give the best preview experience, ensure that your extension updates its UI accordingly
   // For this example, the extension subscribes to `capabilities`, and updates the `label` and `required` attributes for the `TextField` component
   const canBlockProgress = useExtensionCapability("block_progress");
-  const label = canBlockProgress ? {ageLabel} : `${ageLabel} (optional)`; // different message will appear if they disable "block progress"
-
+  const label = canBlockProgress ? ageLabel : `${ageLabel} (optional)`; // different message will appear if they disable "block progress"
+  
   // If age is not valid, show validation errors
   useEffect(() => {
     if (canBlockProgress && isAgeSet() && !isAgeValid()) {
@@ -105,7 +105,7 @@ function App() {
   // Render the extension
   return (
     <BlockStack>
-      <Heading level={3}>Age Verification</Heading>
+      <Heading level={3}>{ageTitle}</Heading>
       {showErrorBanner && (
         <Banner status="critical">
           {ageError}

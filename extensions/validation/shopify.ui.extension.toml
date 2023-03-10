@@ -46,4 +46,10 @@ block_progress = true
    key = "age_label"
    type = "single_line_text_field"
    name = "Field label"
-   description = "This label appears above the age input in the checkout"
+   description = "This label appears as a placeholder inside the age input in the checkout"
+
+   [[settings.fields]]
+   key = "age_title"
+   type = "single_line_text_field"
+   name = "Field title"
+   description = "This title appears above the age input in the checkout"

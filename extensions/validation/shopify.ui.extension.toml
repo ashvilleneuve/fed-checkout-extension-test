@@ -17,9 +17,33 @@ block_progress = true
 # key = "my-key-2"
 
 # Read more on extension settings at https://shopify.dev/api/checkout-extensions/checkout/configuration
-# [settings]
-#   [[settings.fields]]
-#   key = "banner_title"
-#   type = "single_line_text_field"
-#   name = "Banner title"
-#   description = "Enter a title for the banner"
+ [settings]
+   [[settings.fields]]
+   key = "age_threshold"
+   type = "number_integer"
+   name = "Age threshold"
+   description = "The minimum age allowed to proceed"
+    [[settings.fields.validations]]
+        name = "min"
+        value = "1"
+    [[settings.fields.validations]]
+        name = "max"
+        value = "1000"
+        
+   [[settings.fields]]
+   key = "age_error"
+   type = "single_line_text_field"
+   name = "Error message if age under threshold"
+   description = "Message to show customers whose age does not meet the threshold"
+
+   [[settings.fields]]
+   key = "age_missing_error"
+   type = "single_line_text_field"
+   name = "Error message if age missing"
+   description = "Message to show customers have not filled in their age when required"
+
+   [[settings.fields]]
+   key = "age_label"
+   type = "single_line_text_field"
+   name = "Field label"
+   description = "This label appears above the age input in the checkout"

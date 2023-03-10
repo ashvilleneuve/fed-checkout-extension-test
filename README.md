@@ -1,15 +1,22 @@
 # Quick setup
 
 1. Clone this repo 
-2. Go sign up for ngrok and get a new auth token: https://dashboard.ngrok.com/auth/your-authtoken
-3. In terminal, cd into the app directory: `cd fed-checkout-extension-test`
-4. Still in terminal, make sure you have all the packages you need: `npm install`...
-5. ...and then start the development server for the app: `npm run dev`
-6. You should see some prompts to login to your partner account and add your ngrok token. Follow those.
+2. In terminal, cd into the app directory: `cd fed-checkout-extension-test`
+3. Still in terminal, make sure you have all the packages you need: `npm install`
+4. Open the fed-checkout-extension-test/extensions/validation folder in your code editor. The shopify.ui.extension.toml file is the config file for the app. You can edit it to add theme editor settings. The src/index.jsx file is our app in React. Edit that to change the way the app works and looks in the checkout.
+5. When you're finished adding code changes, save your files. In the terminal, run `npm run deploy`.
+6. You should see some prompts to login to your partner account. Follow those.
 7. When you're asked whether to create this project as a new app or connect it as an existing one, choose the latter. Connect to the app "fed-testing-validation".
-8. At the end of the build process, you should be able to hit `p` and an ngrok page will open up. Click the button to be directed to a preview of the app in our test store.
+8. When you're asked if you want to push changes to deploy, choose yes. Wait for the terminal to return to the prompt.
+9. Open our dev store to settings > checkout > edit checkout: https://admin.shopify.com/store/testing-checkout-extensions/settings/checkout/editor (or refresh the page if you're already there).
+10. Click Add app > Validation to install the extension. You should see your changes!
 
-You can make changes to the relevant jsx files while `npm run dev` is still running in your terminal window and they should appear in the app in the admin after a couple of seconds. [This is the tutorial](https://shopify.dev/docs/apps/checkout/validation/fields) I followed to create this app. Feel free to mess it up as much as you like on your local. That won't affect anything outside your own copy.
+Note that you will need to repeat the `npm run deploy` command each time you have changes to preview. Because we're working on the extension in a dev store, we don't need to create versions or publish them -- but a production app will.
+
+[This is the tutorial](https://shopify.dev/docs/apps/checkout/validation/fields) I followed to create this extension, for reference. [This doc](https://shopify.dev/api/checkout-extensions/checkout/configuration) explains how to add settings and scopes to the extension's config file.
+
+
+## Original boilerplate content below:
 
 # Shopify App Template - Node
 
